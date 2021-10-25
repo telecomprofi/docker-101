@@ -19,10 +19,11 @@ figlet test
 ![image](https://user-images.githubusercontent.com/17558124/138663905-dbeaac4e-a856-44fe-84ee-ca941e55231d.png)
 
 ### COPY or ADD ?
-COPY - tba
+COPY - copies files, folders but does not extract archives and won't download from http:// links
 
-ADD - tba
+ADD - copies files, folders AND downloads/extracts archives 
 
+![image](https://user-images.githubusercontent.com/17558124/138681509-f495a967-d819-4e51-9b17-30e86c805a2e.png)
 
 
 
