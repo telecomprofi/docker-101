@@ -36,7 +36,18 @@ RUN curl http://source.file/package.file.tar.gz \
 ```
 
 
-### ENTRYPOINT vs RUN
-TL:DR 
+### ENTRYPOINT vs CMD vs RUN
+* TL:DR 
 <tba>
+* RUN - always starts NEW Layer & executes command and then continues to subsequent lines in Dockerfile
+  ex: ```RUN apt-get install mysql``` e.g. used for installing packages
+  
+* CMD - allows to set default command and/or paramaeter(s) that will be executed when container starts without specifiying or overriding from cli when container instance is run
+  
+* ENTRYPOINT - like CMD but does not allow override from cli, guarantees that specific comand always runs when container instance started
+  
+ Use ENTRYPOINT and CMD *together* and set ENTRYPOINT to command that shouldn't be overriden and put parameters into CMD, that will be (often) overriden at container instance start (docker run <container name> <override parameter>):
+  ![image](https://user-images.githubusercontent.com/17558124/138685820-2fa4325a-36bb-48a8-a480-6294fc1f8557.png)
+  
+  ![image](https://user-images.githubusercontent.com/17558124/138686053-c9ef0f31-0629-4082-a028-583ecf2e9f41.png)
 
