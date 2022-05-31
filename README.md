@@ -51,11 +51,29 @@ RUN curl http://source.file/package.file.tar.gz \
   
   ![image](https://user-images.githubusercontent.com/17558124/138686053-c9ef0f31-0629-4082-a028-583ecf2e9f41.png)
   
+### How to check CPU/Mem/Storage/Net usage by individual container instances?
+  ```
+  #docker stat
+  ```
+  
+### Multistage build pattern
+  each Add, Copy statement adds unnecessary layers to the container image and stays in it forever
+  one of the ways to overcome ever-groving container image size is multi-stage build, when multiple FROM statements are used and only required data (files, folders, etc) is left in final container image.
+  has its drawbacks too
+  some statements are not idempotent - like chaining bash script command in ADDs, COPY statements: 
+  ```apt update && apt install``` 
+  
+  
 ### Docker overlay2
+  newer higher speed version of Docker filesystems, easier on inodes usage
   
 ### Docker best practices  
+  <tba>
   
 ### Docker security cheks
+    insert into your CI/CD pipeline mandatory security scans:
+    bridgecrew/checkov, aquasecurity/privy, etc
+    Leaked credentials also could be an issue - use trufflehog to scan repos.
 
 
 
