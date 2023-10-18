@@ -66,13 +66,20 @@ RUN curl http://source.file/package.file.tar.gz \
   
 ### Docker overlay2
   newer higher speed version of Docker filesystems, easier on inodes usage
+
+### Docker multi-stage builds
+
+ *  [multistage build Dockerfile example](https://github.com/telecomprofi/docker-101/blob/main/multistage_build_example.md)
+
+### Docker BuildKit aka buildx (2022+)
+ * [Youtube video on the topic](https://www.youtube.com/watch?v=3B89b_gXAPU&ab_channel=ArdanLabs)
   
 ### Docker best practices  
   <tba>
   
 ### Docker security cheks
     insert into your CI/CD pipeline mandatory security scans:
-    bridgecrew/checkov, aquasecurity/privy, etc
+    bridgecrew/checkov, aquasecurity/trivy, snyk etc
     Leaked credentials also could be an issue - use trufflehog to scan repos.
 
 
