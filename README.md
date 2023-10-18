@@ -65,17 +65,18 @@ RUN curl http://source.file/package.file.tar.gz \
   
   
 ### Docker overlay2
-  newer higher speed version of Docker filesystems, easier on inodes usage
+*  newer higher speed version of Docker filesystems, easier on inodes usage
 
-### Docker multi-stage builds
-
- *  [multistage build Dockerfile example](https://github.com/telecomprofi/docker-101/blob/main/multistage_build_example.md)
+### Docker multi-stage builds example
+*  [multistage build Dockerfile example](https://github.com/telecomprofi/docker-101/blob/main/multistage_build_example.md)
 
 ### Docker BuildKit aka buildx (2022+)
- * [Youtube video on the topic](https://www.youtube.com/watch?v=3B89b_gXAPU&ab_channel=ArdanLabs)
+* [Youtube video on the topic](https://www.youtube.com/watch?v=3B89b_gXAPU&ab_channel=ArdanLabs)
   
 ### Docker best practices  
-  <tba>
+* do not use root user e.g. when container escape happens, user will have access only to non-admin stuff, limiting lateral movement of the threat actor
+* build only from official images
+* do not bake in secrets into container image
   
 ### Docker security cheks
     insert into your CI/CD pipeline mandatory security scans:
