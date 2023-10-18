@@ -74,14 +74,19 @@ RUN curl http://source.file/package.file.tar.gz \
 * [Youtube video on the topic](https://www.youtube.com/watch?v=3B89b_gXAPU&ab_channel=ArdanLabs)
   
 ### Docker best practices  
+* do multistage builds to save space
+* publish container images to local registry to allow faster pull from k8s cluster (e.g. do not pull them from other part of the globe)
 * do not use root user e.g. when container escape happens, user will have access only to non-admin stuff, limiting lateral movement of the threat actor
-* build only from official images
+* build only from official images, with regular CVE scans
 * do not bake in secrets into container image
+* never use ':latest' tag
+* always use private registry with security scans enabled
+* for images ment to run on production check their SBOM and cross-check with the official sourcse to spot tampering at Supply Chain 
   
 ### Docker security cheks
-    insert into your CI/CD pipeline mandatory security scans:
-    bridgecrew/checkov, aquasecurity/trivy, snyk etc
-    Leaked credentials also could be an issue - use trufflehog to scan repos.
+* insert into your CI/CD pipeline mandatory security scans:
+* bridgecrew/checkov, aquasecurity/trivy, snyk etc
+* Leaked credentials also could be an issue - use trufflehog to scan repos.
 
 
 
